@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+       {% block styles %}
+       <!-- Bootstrap CSS -->
+       {{ bootstrap.load_css() }}
+       {% endblock %}
+   <title>{% block title %}{% endblock %}</title>
+   <link href="./static/style.css" rel="stylesheet">
+   <div class="header-tags">
+       <div class="anchor-tags">
+           <a class="white big left" href="{{ url_for('home') }}">TODOs</a>
+           <a class="white big right padding-left" href="{{ url_for('contact') }}">CONTACT US</a>
+           <div class="white right padding-left big">|</div>
+           <a class="white big right" href="{{ url_for('add') }}">ADD TODO</a>
+       </div>
+   </div>
+</head>
+<body>
+   {% block content %}{% endblock %}
+</body>
+</html>

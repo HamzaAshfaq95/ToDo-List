@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+{% from 'bootstrap5/form.html' import render_form %}
+<body>
+  <h1>Contact Us</h1>
+  {{ render_form(form, novalidate=True) }}
+</body>
+{% endblock %}

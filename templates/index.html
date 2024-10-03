@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}TODOs{% endblock %}
+{% block content %}
+<body>
+    <div class="padding-left padding-right">
+        <div class="center">
+            <h1>{% if day %} {{ day }} {% endif %},{% if date %} {{ date }} {% endif %}</h1>
+        </div>
+        <div class="tasks">
+            <h4>TO DOs:</h4>
+            {% for task in tasks %}
+            <li>{{ task.task }} <a href="{{ url_for('done', id=task.id) }}">☑</a> </li>
+            {% endfor %}
+            <h4>Done Tasks:</h4>
+            {% for task in done_tasks %}
+            <li>{{ task }}</li>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}
